@@ -16,18 +16,20 @@
 
 #include "Maze.h"
 
-class BaseRobot {
 
+class BaseRobot {
+   
 public:
+    void start();
+    void getStats();
     
-    start();
-    getStats();
-    
-    loadMaze(Maze maze);
-    setPos(int x, int y);
+    void loadMaze(Maze);
+    void setPos(int, int);
     
 private:
     int turns;
+    int x, y;
+    Maze maze;
 };
 
 
