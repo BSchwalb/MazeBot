@@ -22,6 +22,10 @@ MazeManager mazeManager;
 int main(int argc, char** argv) {
 
     mazeManager.addMaze("maze1_small.txt");
+    //mazeManager.addMaze("maze2_unicursal.txt");
+    //mazeManager.addMaze("maze3_braid.txt");
+    //mazeManager.addMaze("maze4_braid.txt");
+    //mazeManager.addMaze("maze5_cavern.txt");
     mazeManager.printMaze(0);
     
     return 0;

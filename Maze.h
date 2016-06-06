@@ -27,8 +27,9 @@ public:
     int getAt(int x, int y); // 0 = free, 1 = wall  - may use for trails/notes
     char getAtC(int x, int y); // returns the char for printing
     void setAt(int x, int y, int value);
+    void getSE(); // get Start, End
     int size = 0;
-    int startx, starty, endx, endy; // x & y  coordinates of start/end of maze, get this in constructor
+    int startx = 0, starty = 0, endx = 0, endy = 0; // x & y  coordinates of start/end of maze, get this in constructor
     
     vector< vector<int> >  maze;
     

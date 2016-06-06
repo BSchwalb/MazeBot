@@ -24,7 +24,7 @@ using namespace std;
 class MazeManager {
 
 public:
-    int addMaze(string filename);     // how to create it? pass filename/path to file? (return id of maze == pos in array)
+    int addMaze(string filename);    
     Maze loadMaze(int id);
     void printMaze(int id);
     

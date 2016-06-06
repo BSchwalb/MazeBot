@@ -35,6 +35,7 @@ int MazeManager::addMaze(string filename) {
         newMaze.addLine(newLine);
     }
     
+    newMaze.getSE();
     mazes.push_back(newMaze);
     return (mazes.size() - 1);
 }
@@ -52,6 +53,11 @@ void MazeManager::printMaze(int id) {
         }
         cout << endl;
     }
+    
+    
+    cout << "Start: <" << maze.startx << ", " << maze.starty << "> " << endl;
+    cout << "End: <" << maze.endx << ", " << maze.endy << "> " << endl;
+    
 }
 
 #endif
