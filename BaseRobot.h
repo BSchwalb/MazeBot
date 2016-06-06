@@ -20,7 +20,7 @@
 class BaseRobot {
    
 public:
-    void start();
+    virtual void solve();
     void getStats();
     
     void loadMaze(Maze);
