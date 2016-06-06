@@ -23,16 +23,18 @@ using namespace std;
 class Maze {
 
 public:
-    
-    Maze(int size);
-    
+    void addLine(vector<int> line);
     int getAt(int x, int y); // 0 = free, 1 = wall  - may use for trails/notes
+    char getAtC(int x, int y); // returns the char for printing
     void setAt(int x, int y, int value);
-    int size;
+    int size = 0;
     int startx, starty, endx, endy; // x & y  coordinates of start/end of maze, get this in constructor
     
-private:
     vector< vector<int> >  maze;
+    
+private:
+    char wall = '#';
+    char free = ' ';
 };
 
 

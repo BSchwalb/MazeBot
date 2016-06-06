@@ -13,13 +13,17 @@
 
 #include <cstdlib>
 
+#include "MazeManager.h"
+
 using namespace std;
 
-/*
- * 
- */
+MazeManager mazeManager;
+
 int main(int argc, char** argv) {
 
+    mazeManager.addMaze("maze1_small.txt");
+    mazeManager.printMaze(0);
+    
     return 0;
 }
 

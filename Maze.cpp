@@ -6,21 +6,26 @@
 #define MAZE_C
 #include "Maze.h"
 
-Maze::Maze(int size) {
-    this->size = size;
-    
-    for(int i = 0; i < size; i++) {
-        vector t;
-        maze.push_back(t);
-    }
-}
 
-Maze::getAt(int x, int y) {
+int Maze::getAt(int x, int y) {
     return maze[x][y];
 }
 
-Maze::setAt(int x, int y, int value) {
+char Maze::getAtC(int x, int y) {
+    int pos = maze[x][y];
+    if(pos == 0)
+        return free;
+    if(pos == 1) 
+        return wall;
+}
+
+void Maze::setAt(int x, int y, int value) {
     maze[x][y] = value;
+}
+
+void Maze::addLine(vector<int> line) {
+    maze.push_back(line);
+    size++;
 }
 
 #endif

@@ -16,14 +16,15 @@
 
 #include "Maze.h"
 #include <iostream>
-#include <vektor>       // doesn't work for me - no idea wtf is going on
-
+#include <vector>
+#include <string>
+        
 using namespace std;
 
 class MazeManager {
 
 public:
-    int addMaze();     // how to create it? pass filename/path to file? (return id of maze == pos in array)
+    int addMaze(string filename);     // how to create it? pass filename/path to file? (return id of maze == pos in array)
     Maze loadMaze(int id);
     void printMaze(int id);
     
