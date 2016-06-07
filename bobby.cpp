@@ -113,7 +113,7 @@ int bobby::solve()
 
 
     //if(!schlendern(maze.starty, maze.startx)){
-    if(!schlendern(0,3)){
+    if(!schlendern(maze.startx,maze.starty)){
         cout << "DA LAEUFT WAS SCHIEF WAT?" << endl;
     }
 
