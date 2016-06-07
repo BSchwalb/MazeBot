@@ -6,17 +6,25 @@
 
 using namespace std;
 
+int BaseRobot::solve() {
+    return 999999;
+}
+
+
 void BaseRobot::loadMaze(Maze maze) {
     this->maze = maze;
+    x = maze.startx;
+    y = maze.starty;
 }
 
 void BaseRobot::setPos(int x, int y) {
+    maze.setAt(this->x, this->y, 0);
     this->x = x;
     this->y = y;
 }
 
-void BaseRobot::getStats() {
-    cout << "Turns: " << turns << endl;
+int BaseRobot::getStats() {
+    return turns;
 }
 
 #endif

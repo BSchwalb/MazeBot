@@ -20,15 +20,15 @@
 class BaseRobot {
    
 public:
-    virtual void solve();
-    void getStats();
+    virtual int solve();
+    int getStats();
     
     void loadMaze(Maze);
     void setPos(int, int);
     
-private:
-    int turns;
-    int x, y;
+protected:
+    int turns = 0;
+    int x = 0, y = 0;
     Maze maze;
 };
 

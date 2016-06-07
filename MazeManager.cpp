@@ -40,6 +40,9 @@ int MazeManager::addMaze(string filename) {
     return (mazes.size() - 1);
 }
 
+Maze MazeManager::loadMaze(int id) {
+    return mazes[id];
+}
 
 void MazeManager::printMaze(int id) {
     
