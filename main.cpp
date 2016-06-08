@@ -11,7 +11,6 @@
  * Created on May 19, 2016, 9:04 PM
  */
 
-#include <cstdlib>
 
 #include "MazeManager.h"
 #include "BaseRobot.h"
@@ -19,11 +18,12 @@
 #include "chantal.h"
 #include "bobby.h"
 #include <sstream>
+#include <thread>
 
 using namespace std;
 
 void fight_();
-
+    
 MazeManager mazeManager;
 
 int main(int argc, char** argv) {
@@ -35,6 +35,7 @@ int main(int argc, char** argv) {
     mazeManager.addMaze("maze5_cavern.txt");
     
     BaseRobot *robot1;
+    
     
     bool fight = false;
     
@@ -107,13 +108,23 @@ void fight_() {
     
     for(int i = 0; i <= 4; i++) {
         myRobot.loadMaze(mazeManager.loadMaze(i));
-        stats[0].push_back(myRobot.solve());
-        
+        thread t1(myRobot.solve());
+       
         chantal.loadMaze(mazeManager.loadMaze(i));
-        stats[1].push_back(chantal.solve());
+        thread t2(chantal.solve());
         
         bobby.loadMaze(mazeManager.loadMaze(i));
-        stats[2].push_back(bobby.solve());
+        thread t3(bobby.solve());
+        
+        
+        
+        t1.join();
+        t2.join();
+        t3.join();
+        
+        stats[0].push_back(myRobot.getStats());
+        stats[1].push_back(chantal.getStats());
+        stats[2].push_back(bobby.getStats());
     }
     
     cout << endl << "Fight Results: " << endl;
