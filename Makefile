@@ -6,7 +6,7 @@ mazebot: main.o BaseRobot.o MyRobot1.o bobby.o chantal.o MazeManager.o Maze.o
 		${CC} ${CFLAGS} -o mazebot main.o BaseRobot.o MyRobot1.o bobby.o chantal.o MazeManager.o Maze.o  
 main.o: main.cpp Maze.h 
 		${CC} ${CFLAGS} -c main.cpp
-BaseRobot.o: BaseRobot.cpp Baserobot.h
+BaseRobot.o: BaseRobot.cpp BaseRobot.h
 		${CC} ${CFLAGS} -c BaseRobot.cpp
 MyRobot1.o: MyRobot1.cpp MyRobot1.h
 		${CC} ${CFLAGS} -c MyRobot1.cpp
