@@ -39,6 +39,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/Maze.o \
 	${OBJECTDIR}/MazeManager.o \
 	${OBJECTDIR}/MyRobot1.o \
+	${OBJECTDIR}/bobby.o \
+	${OBJECTDIR}/chantal.o \
 	${OBJECTDIR}/main.o
 
 
@@ -85,6 +87,16 @@ ${OBJECTDIR}/MyRobot1.o: MyRobot1.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MyRobot1.o MyRobot1.cpp
+
+${OBJECTDIR}/bobby.o: bobby.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/bobby.o bobby.cpp
+
+${OBJECTDIR}/chantal.o: chantal.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/chantal.o chantal.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

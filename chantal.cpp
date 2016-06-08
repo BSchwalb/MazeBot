@@ -151,18 +151,20 @@ void chantal::findD()
         findD();
     }
     else{
-        for(int i = 0; i < maze.size; i++) {
+       /* for(int i = 0; i < maze.size; i++) {
         for(int j = 0; j < maze.maze[i].size(); j++) {
             cout << maze.getAtC(i, j);
         }
         cout << endl;
         }
+        * */
 
         flanieren(maze.startx,maze.starty);
     }
 }
 
 int chantal::solve(){
+    dir = 0;
     findD();
-    return 42;
+    return turns;
 }

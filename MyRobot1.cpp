@@ -9,13 +9,10 @@
 #include "MyRobot1.h"
 
 int MyRobot1::solve() {
-    int turns = 0;
- /*
-    cout << "Hey, I'm hisRobot1! :> " << endl;
-    cout << "I'm currently at <" << x << ", " << y << ">." << endl;
-    cout << "Help me get to <" << maze.endx << ", " << maze.endy << ">, please! :)" << endl;
-
-   */
+    turns = 0;
+ 
+    visited.clear();
+    
     solve(maze.startx, maze.starty);
 
     return turns;

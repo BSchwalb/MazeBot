@@ -116,7 +116,7 @@ bool bobby::schlendern(int x, int y)
 
 int bobby::solve()
 {
-    int turns = 0;
+    turns = 0;
     dir=0;
 
 

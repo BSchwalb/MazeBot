@@ -8,6 +8,8 @@
       <itemPath>Maze.h</itemPath>
       <itemPath>MazeManager.h</itemPath>
       <itemPath>MyRobot1.h</itemPath>
+      <itemPath>bobby.h</itemPath>
+      <itemPath>chantal.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -20,6 +22,8 @@
       <itemPath>Maze.cpp</itemPath>
       <itemPath>MazeManager.cpp</itemPath>
       <itemPath>MyRobot1.cpp</itemPath>
+      <itemPath>bobby.cpp</itemPath>
+      <itemPath>chantal.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -63,6 +67,14 @@
       </item>
       <item path="MyRobot1.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="bobby.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="bobby.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chantal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="chantal.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -101,6 +113,14 @@
       <item path="MyRobot1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MyRobot1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="bobby.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="bobby.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chantal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="chantal.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

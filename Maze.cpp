@@ -48,6 +48,17 @@ void Maze::getSE() {
         }
 
     }
+    if(cs) {
+        for(int i = 0; i < maze[0].size(); i++) {
+            if(getAt(0,i) == 0 && starty != i) {
+                endx = 0;
+                endy = i;
+                cs = true;
+            }
+        }
+    }
+    
+    if(!ce) {
 
         int i = maze[0].size()-1;
 
@@ -70,6 +81,7 @@ void Maze::getSE() {
             }
         }
 
+    }
 
 
 }
