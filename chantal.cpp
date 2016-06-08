@@ -1,6 +1,6 @@
-#include "bobby.h"
+#include "chantal.h"
 
-bool bobby::schlendern(int x, int y)
+bool chantal::flanieren(int x, int y)
 {
 
 
@@ -18,7 +18,7 @@ bool bobby::schlendern(int x, int y)
             dir=1;
             y--;
             turns++;
-            schlendern(x,y);
+            flanieren(x,y);
         }
         else
         {
@@ -26,12 +26,12 @@ bool bobby::schlendern(int x, int y)
             {
                 x++;
                 turns++;
-                schlendern(x,y);
+                flanieren(x,y);
             }
 
             else{
                 dir=3;
-                schlendern(x,y);
+                flanieren(x,y);
             }
         }
         break;
@@ -42,7 +42,7 @@ bool bobby::schlendern(int x, int y)
             dir=2;
             x--;
             turns++;
-            schlendern(x,y);
+            flanieren(x,y);
         }
         else
         {
@@ -50,11 +50,11 @@ bool bobby::schlendern(int x, int y)
             {
                 y--;
                 turns++;
-                schlendern(x,y);
+                flanieren(x,y);
             }
             else{
                 dir--;
-                schlendern(x,y);
+                flanieren(x,y);
             }
         }
         break;
@@ -65,7 +65,7 @@ bool bobby::schlendern(int x, int y)
             dir=3;
             y++;
             turns++;
-            schlendern(x,y);
+            flanieren(x,y);
         }
         else
         {
@@ -73,11 +73,11 @@ bool bobby::schlendern(int x, int y)
             {
                 x--;
                 turns++;
-                schlendern(x,y);
+                flanieren(x,y);
             }
             else{
                 dir--;
-                schlendern(x,y);
+                flanieren(x,y);
             }
         }
         break;
@@ -88,7 +88,7 @@ bool bobby::schlendern(int x, int y)
             dir=0;
             x++;
             turns++;
-            schlendern(x,y);
+            flanieren(x,y);
         }
         else
         {
@@ -96,11 +96,11 @@ bool bobby::schlendern(int x, int y)
             {
                 y++;
                 turns++;
-                schlendern(x,y);
+                flanieren(x,y);
             }
             else{
                 dir--;
-                schlendern(x,y);
+                flanieren(x,y);
             }
         }
         break;
@@ -112,20 +112,57 @@ bool bobby::schlendern(int x, int y)
     }
 }
 
-
-
-int bobby::solve()
+void chantal::findD()
 {
-    int turns = 0;
-    dir=0;
+    int redoflag=0;
+    for(int i = 1; i < maze.size-2; i++)
+    {
+        for(int j = 1; j < maze.maze[i].size()-1; j++)
+        {
+            int bordercount=0;
+            if(maze.getAtC(i,j)==' ')
+            {
+                if(maze.getAtC(i+1,j)=='#')
+                {
+                    bordercount++;
+                }
+                if(maze.getAtC(i-1,j)=='#')
+                {
+                    bordercount++;
+                }
+                if(maze.getAtC(i,j+1)=='#')
+                {
+                    bordercount++;
+                }
+                if(maze.getAtC(i,j-1)=='#')
+                {
+                    bordercount++;
+                }
+                if(bordercount==3)
+                {
+                    maze.setAt(i,j,1);
+                    redoflag++;
+                }
+            }
 
-
-    //if(!schlendern(maze.starty, maze.startx)){
-    if(!schlendern(maze.startx,maze.starty)){
-        cout << "DA LAEUFT WAS SCHIEF WAT?" << endl;
+        }
     }
+    if(redoflag>0){
+        findD();
+    }
+    else{
+        for(int i = 0; i < maze.size; i++) {
+        for(int j = 0; j < maze.maze[i].size(); j++) {
+            cout << maze.getAtC(i, j);
+        }
+        cout << endl;
+        }
 
-    return turns;
-
+        flanieren(maze.startx,maze.starty);
+    }
 }
 
+int chantal::solve(){
+    findD();
+    return 42;
+}

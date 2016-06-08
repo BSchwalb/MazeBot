@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   Maze.h
  * Author: Benjamin
  *
@@ -30,9 +30,9 @@ public:
     void getSE(); // get Start, End
     int size = 0;
     int startx = 0, starty = 0, endx = 0, endy = 0; // x & y  coordinates of start/end of maze, get this in constructor
-    
+
     vector< vector<int> >  maze;
-    
+
 private:
     char wall = '#';
     char free = ' ';

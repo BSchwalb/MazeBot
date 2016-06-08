@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   MyRobot1.h
  * Author: Benjamin
  *
@@ -27,7 +27,7 @@ class MyRobot1 : public BaseRobot {
     bool solve(int, int);
     bool contains(int, int);
     vector<point> visited;
-    
+
 };
 
 

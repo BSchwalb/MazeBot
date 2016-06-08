@@ -15,7 +15,7 @@ char Maze::getAtC(int x, int y) {
     int pos = maze[x][y];
     if(pos == 0)
         return free;
-    if(pos == 1) 
+    if(pos == 1)
         return wall;
 }
 
@@ -46,11 +46,11 @@ void Maze::getSE() {
                 cs = true;
             }
         }
-    
-    } 
-    
+
+    }
+
         int i = maze[0].size()-1;
-        
+
         for(int j = 0; j < maze.size() - 1; j++) {
             if(getAt(j,i) == 0) {
                 endx = j;
@@ -58,9 +58,9 @@ void Maze::getSE() {
                 ce = true;
             }
         }
-        
+
         if(!ce) {
-            int j = maze.size() - 2;
+            int j = maze.size() - 1;
             for(int i = 0; i < maze[0].size(); i++) {
                 if(getAt(j,i) == 0) {
                     endx = j;
@@ -69,9 +69,9 @@ void Maze::getSE() {
                 }
             }
         }
-        
-    
-    
+
+
+
 }
 
 #endif

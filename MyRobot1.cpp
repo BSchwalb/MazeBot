@@ -10,28 +10,28 @@
 
 int MyRobot1::solve() {
     int turns = 0;
- /*   
+ /*
     cout << "Hey, I'm hisRobot1! :> " << endl;
     cout << "I'm currently at <" << x << ", " << y << ">." << endl;
     cout << "Help me get to <" << maze.endx << ", " << maze.endy << ">, please! :)" << endl;
-    
-   */ 
+
+   */
     solve(maze.startx, maze.starty);
-    
+
     return turns;
 }
 
 
 bool MyRobot1::solve(int nx, int ny) {
-    
+
     turns++;
     // Make the move (if it's wrong, we will backtrack later.
-    setPos(nx,ny);   
+    setPos(nx,ny);
     point p1;
     p1.x = nx;
     p1.y = ny;
     visited.push_back(p1);
-  
+
     //cout << "Turn " << turns << ": Pos " << x << ", " << y  << endl;
 
 
@@ -65,7 +65,7 @@ bool MyRobot1::solve(int nx, int ny) {
 
 bool MyRobot1::contains(int x, int y) {
     for(auto const& p: visited) {
-        if(p.x == x && p.y == y) 
+        if(p.x == x && p.y == y)
             return true;
     }
     return false;
