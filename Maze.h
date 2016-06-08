@@ -6,7 +6,7 @@
 
 /*
  * File:   Maze.h
- * Author: Benjamin
+ * Author: Benjamin Schwalb and Valentin Sagl
  *
  * Created on May 19, 2016, 9:06 PM
  */

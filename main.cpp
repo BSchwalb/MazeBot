@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   main.cpp
- * Author: Benjamin
+ * Author: Benjamin Schwalb and Valentin Sagl
  *
  * Created on May 19, 2016, 9:04 PM
  */
@@ -23,7 +23,7 @@
 using namespace std;
 
 void fight_();
-    
+
 MazeManager mazeManager;
 
 int main(int argc, char** argv) {
@@ -33,21 +33,22 @@ int main(int argc, char** argv) {
     mazeManager.addMaze("maze3_braid.txt");
     mazeManager.addMaze("maze4_braid.txt");
     mazeManager.addMaze("maze5_cavern.txt");
-    
+
     BaseRobot *robot1;
-    
-    
+
+
     bool fight = false;
-    
-    while(true) {
+    char input =' ';
+
+    while(input != 'q') {
 
         cout << "1) My Robot " << endl << "2) Chantal" << endl << "3) Bobby" << endl << "4) Deathmatch" << endl << endl;
         cout << "Which Robot do you want to use? ";
 
-        char input;
+
         cin >> input;
         string name;
-        
+
         switch(input) {
             case '1':
                 robot1 = new MyRobot1();
@@ -71,8 +72,8 @@ int main(int argc, char** argv) {
 
         }
 
-        if(!fight) {
-        
+        if(!fight && input != 'q') {
+
             cout << endl << endl << "Which maze do you want to load? (0-4) ";
             cin >> input;
 
@@ -98,44 +99,68 @@ void fight_() {
     MyRobot1 myRobot;
     chantal chantal;
     bobby bobby;
-    
+
     vector<vector<int>> stats;
-    
+
     vector<int> v;
     stats.push_back(v);
     stats.push_back(v);
     stats.push_back(v);
-    
+
     for(int i = 0; i <= 4; i++) {
+
+        /*
         myRobot.loadMaze(mazeManager.loadMaze(i));
         thread t1(myRobot.solve());
-       
+
         chantal.loadMaze(mazeManager.loadMaze(i));
         thread t2(chantal.solve());
-        
+
         bobby.loadMaze(mazeManager.loadMaze(i));
         thread t3(bobby.solve());
-        
-        
-        
+
+
+        myRobot.loadMaze(mazeManager.loadMaze(i));
+        thread t1(myRobot.solve());
+
+        myRobot.loadMaze(mazeManager.loadMaze(i));
+        thread t1(myRobot.solve());
+
+        myRobot.loadMaze(mazeManager.loadMaze(i));
+        thread t1(myRobot.solve());
+
+
         t1.join();
         t2.join();
         t3.join();
-        
+
+        */
+
+        myRobot.loadMaze(mazeManager.loadMaze(i));
+        myRobot.solve();
+
+        chantal.loadMaze(mazeManager.loadMaze(i));
+        chantal.solve();
+
+        bobby.loadMaze(mazeManager.loadMaze(i));
+        bobby.solve();
+
+
+
         stats[0].push_back(myRobot.getStats());
         stats[1].push_back(chantal.getStats());
         stats[2].push_back(bobby.getStats());
     }
-    
+
     cout << endl << "Fight Results: " << endl;
-    
-    for(int i = 0; i <= 4; i++) { 
+
+    for(int i = 0; i <= 4; i++) {
         cout << endl << "Maze " << i << ": " << endl;
         cout << "MyRobot: " << stats[0][i] << " turns!" << endl;
         cout << "chantal: " << stats[1][i] << " turns!" << endl;
         cout << "bobby: " << stats[2][i] << " turns!" << endl;
     }
-    
-    
+
+
             cout << endl << endl << endl;
 }

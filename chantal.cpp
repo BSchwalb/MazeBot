@@ -165,6 +165,7 @@ void chantal::findD()
 
 int chantal::solve(){
     dir = 0;
+    turns=0;
     findD();
     return turns;
 }
